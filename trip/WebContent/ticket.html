@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> 항공</title>
+    <style media="screen">
+     @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+     @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+    
+      #button{float: right;}
+     
+      table{border: 1px solid gray;
+            width: 900px;
+            height: 219px;}
+     
+      .inputdate{width: 300px;
+             height: 30px;}
+    
+      .state{width: 300px;
+             height: 37px;}
+     
+      div{padding-top: 260px;}
+      
+      .back-ground{background-image: url('image/cloud.jpg');
+      background-size: 100% 700px;}
+     
+      #table-back{background-color: #87ceeb;}
+      
+      caption{font-size: 50px;
+              font-family: 'Nanum Pen Script', serif;}
+    
+      .ti{font-family: 'Nanum Pen Script', serif;
+           height: 40px;
+     font-size: 2.0em;}
+        #foottext{text-align: right;}
+    
+    body{   
+     width: 1100px;
+     margin: 0 auto;}
+     
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function confi(){
+        /////////////
+           var chk_radio = document.getElementsByName('ra');
+           var sel_type = null;
+           for(var i=0;i<chk_radio.length;i++){
+              if(chk_radio[i].checked == true){
+                 sel_type = chk_radio[i].value;
+              }
+           }
+           if(sel_type == null){
+                   alert("서비스유형을 선택하세요.");
+                   return false;
+            }
+
+        ///////////////라디오버튼 체크//////
+          var sels = document.getElementById("sels");
+          var vals=sels.options[sels.selectedIndex].text
+        ////////////////start값/////
+
+          var sele = document.getElementById("sele");
+          var vale=sele.options[sele.selectedIndex].text;
+
+          var dates=document.getElementById("dates");
+          var valdates=dates.value;
+
+          var datee=document.getElementById("datee");
+          var valdatee=datee.value;
+
+        // alert(valdates);
+        var cons="입력한 정보를 확인해 주세요 :) 맞다면 확인을 눌러주세요.\n\n"+sel_type+"여행 \n"+"출발지 : "+vals+"\n도착지 : "+vale+"\n출발하는 날 : "+valdates+"\n도착하는 날 : "+valdatee;
+
+         ////////////end값////////
+         var conf= confirm(cons);
+         if( conf == true ){
+              alert("확인선택!");
+         }else{
+              alert("취소선택!");
+         }
+      }
+    </script>
+    <div class="back-ground" style="
+    height: 400px;">
+      <span>
+       <form method="get" action="airSearch.jsp">
+        <table align="center" id="table-back">
+          <caption>항공권 예매</caption>
+          <thead>
+          <tr>
+          <td class="ti">출발지</td>
+         		 <td class="ti">도착지</td>
+          </tr>
+          </thead>
+          <tr>
+            <td><select class="state" name="sels" id="sels">
+               <option value="" class="ti">출발지</option>
+               <option value="ICN">인천/서울, 대한민국</option>
+               <option value="GMP">김포/서울, 대한민국</option>
+               <option value="LHR">히드로/런던, 영국</option>
+               <option value="CDG">샤를드골/파리, 프랑스</option>
+               <option value="FCO">피우미치노/로마, 이탈리아</option>
+               <option value="HNL">호놀룰루/하와이, 하와이</option>
+            </select></td>
+            <td><select class="state" name="stop" id="sele">
+               <option value="" class="ti">도착지</option>
+              <option value="ICN">인천/서울, 대한민국</option>
+               <option value="GMP">김포/서울, 대한민국</option>
+               <option value="LHR">히드로/런던, 영국</option>
+               <option value="CDG">샤를드골/파리, 프랑스</option>
+               <option value="FCO">피우미치노/로마, 이탈리아</option>
+               <option value="HNL">호놀룰루/하와이, 하와이</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td class="ti">가는날</td>
+            <td class="ti">오는날</td>
+          </tr>
+          <tr>
+            <td><input type="date" name="startday" value="sday" class="inputdate" id="dates" placeholder="날짜 선택"></td>
+            <td><input type="date" name="endday" value="eday" class="inputdate" id="datee" placeholder="날짜 선택"></td>
+          </tr>
+          <tr><td class="ti">좌석 수</td></tr>
+          <tr>
+          <td><input type="number" name="pe" value="pe" placeholder="1" class="inputdate"></td>
+          </tr>
+                    <tr>
+            <td colspan="2" id="button"><input type="submit" value="검색"></td>
+          </tr>
+        </table>
+      </span>
+    </div>
+   <hr>
+  </body>
+  <footer>
+  <a href="https://kr.koreanair.com/korea/ko.html" target="_blank"><img src="image/ko.png" alt="대한항공" width="150px" class="airimg"></a>
+  &nbsp&nbsp&nbsp&nbsp
+  <a href="http://flyasiana.com/CW/ko/booking/bookingMain.do" target="_blank"><img src="image/as.png" alt="아시아나 항공" width="150px" class="airimg"></a>
+  <label for="" id="foottext">@Hallym 2017 최지은</label>
+  </footer>
+</html>

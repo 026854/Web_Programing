@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>여행 정보</title>
+    <style media="screen">
+    @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+    body {
+     margin:0px auto;
+     padding: 0;
+     font-family:"맑은 고딕";
+     font-size:0.9em;
+     background-color: #fff0f5;
+     width: 1292px;
+}
+nav{width: auto;
+    height: auto;
+     float: left;
+   margin-right: 10px;}
+     section{width: 83%;
+             height: 1000px;
+              float: left;}
+ ul#navi {
+     width: 200px;
+     text-indent: 10px;
+}
+ ul#navi, ul#navi ul {
+     margin:0;
+     padding:0;
+     list-style:none;
+}
+ li.group {
+     margin-bottom: 3px;
+}
+ li.group div.title {
+     height: 35px;
+     line-height: 35px;
+     background:#dda0dd;
+     cursor:pointer;
+}
+ ul.sub li {
+     margin-bottom: 2px;
+     height:35px;
+     line-height:35px;
+     background:#f4f4f4;
+     cursor:pointer;
+}
+ ul.sub li a {
+     display: block;
+     width: 100%;
+     height:100%;
+     text-decoration:none;
+     color:#000;
+}
+ ul.sub li:hover {
+     background:#ee82ee;
+}
+ #title{text-decoration: none;
+     color: black; width:600px;
+     font-family: 'Jeju Hallasan', serif;}
+ #home{float: right;
+     margin-right: 30px;}
+ #text{width: 600px;
+      font-family: 'Jeju Hallasan', serif;}
+ h3{height: 20px;}
+ h1{margin-top: 0px;
+ font-size: 3em;}
+    </style>
+  </head>
+  <header>
+    <div id="header">
+      <h1><a href="info.html" id="title">"여행 GUIDE~"</a></h1>
+      <h3><img src="image/home.png" alt="홈으로" width=60px height=60px id="home" onclick="parent.location.href='main.jsp';"></h3>
+      <label for="" id="text">유명한 여행도시들입니다. 도시를 클릭하시면 정보페이지로 이동하여 많은 정보를 얻을 수 있습니다.</label>
+    </div>
+  </header>
+  <body>
+  <div id="content">
+    <hr>
+    <nav>
+      <ul id="navi">
+         <li class="group">
+             <div class="title">유럽</div>
+             <ul class="sub">
+                 <li><a href="par.jsp" target="frame">파리</a></li>
+                 <li><a href="lon.jsp" target="frame">런던</a></li>
+                 <li><a href="rom.jsp" target="frame">로마</a></li>
+             </ul>
+         </li>
+         <li class="group">
+             <div class="title">대한민국</div>
+             <ul class="sub">
+                 <li><a href="jeju.jsp" target="frame">제주도</a></li>
+             </ul>
+         </li>
+         <li class="group">
+             <div class="title">미주</div>
+             <ul class="sub">
+                 <li><a href="new.jsp" target="frame">뉴욕</a></li>
+                 <li><a href="ha.jsp" target="frame">하와이</a></li>
+             </ul>
+         </li>
+       </ul>
+      </nav>
+      <section>
+       <span class="iframe">
+         <iframe src="par.jsp" width="100%" height=1000px scrolling="auto" frameborder="0" name="frame"></iframe>
+       </span>
+      </section>
+      </div>
+      <div style="position: fixed; bottom: 5px; right: 5px;">
+        <a href="#header">
+        <img src="image/top.jpg" title="위로 가기" width=50px height=50px></a>
+      </div>
+  </body>
+</html>
